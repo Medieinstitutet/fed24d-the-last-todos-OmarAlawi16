@@ -13,14 +13,18 @@ function TodoList({ todos, onToggle, onDelete }: TodoListProps) {
       <h1>My Todo List</h1>
       <p>Press on the todo item to toggle completion status.</p>
       <ul className="todo-list">
-        {todos.map(todo => (
-          <TodoItem
-            key={todo.id}
-            todo={todo}
-            onToggle={onToggle}
-            onDelete={onDelete}
-          />
-        ))}
+        {todos
+          // create a copy of the list and then sort by text
+          .slice()
+          .sort((a, b) => a.text.localeCompare(b.text))
+          .map(todo => (
+            <TodoItem
+              key={todo.id}
+              todo={todo}
+              onToggle={onToggle}
+              onDelete={onDelete}
+            />
+          ))}
       </ul>
     </div>
   );
