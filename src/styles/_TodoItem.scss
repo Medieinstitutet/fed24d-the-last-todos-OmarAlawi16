@@ -1,0 +1,44 @@
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: #f9f9f9;
+  }
+
+  &.completed {
+    text-decoration: line-through;
+    color: #aaa;
+  }
+
+  span {
+    flex: 1;
+  }
+
+  .todo-date {
+    font-size: 0.8rem;
+    color: #888;
+  }
+
+  button {
+    background: #ff4d4d;
+    border: none;
+    color: #fff;
+    padding: 0.3rem 0.8rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-left: 20px;
+
+    &:hover {
+      background: #e60000;
+    }
+  }
+}
